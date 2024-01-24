@@ -1,0 +1,62 @@
+{% extends "student/base.html" %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bootdey {
+            display: flex;
+            justify-content: space-between;
+        }
+        .pro-img-details {
+            width: 50%;
+        }
+        .pro-details {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container bootdey mt-5">
+        <div class="pro-img-details">
+            <section class="panel">
+                <div class="panel-body">
+                    <div class="pro-img-details">
+                        <img src="{{ student.Image }}" alt="" style="height: 250px; width: 500px;">
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="pro-details">
+            <section class="panel">
+                <div class="panel-body">
+                    <h4 class="pro-d-title">
+                        {{ student.name }}
+                    </h4>
+                    <p>
+                        Roll No: {{ student.RollNo }}
+                    </p>
+                    <div class="product_meta">
+                        <span class="posted_in"> <strong>Address:</strong> {{ student.Address }}</span>
+                        <span class="tagged_as"><strong>Parent Phone No:</strong> {{ student.PhoneNo }}</span>
+                    </div>
+                    <div class="mt-5">
+
+                    </div>
+                    <p>
+                        <a href="{% url 'student:index' %}"><button class="btn btn-round btn-danger" type="button"><i class="fa fa-shopping-cart"></i>back</button></a>
+                        <a href="{% url 'student:update' student.id %}"><button class="btn btn-round btn-danger" type="button"><i class="fa fa-shopping-cart"></i> Update</button></a>
+                        <button class="btn btn-round btn-danger" type="button"><i class="fa fa-shopping-cart"></i> Delete</button>
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock  %}

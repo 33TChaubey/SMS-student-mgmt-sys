@@ -1,0 +1,10 @@
+{% extends "student/base.html" %}
+{% block body %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    Are ypu sure you want to delete
+    <button type="submit">Yes, Conform</button>
+</form>
+  
+{% endblock  %}
